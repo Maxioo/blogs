@@ -2,7 +2,7 @@
 layout: article
 title: 实现Windows录屏功能
 category: 音视频技术
-tag: 音视频技术
+tag: 音视频技术 2018-07
 ---
 
 # 关于实现Windows录屏功能的想法
@@ -19,6 +19,6 @@ tag: 音视频技术
 
 ## 基础知识的学习
 
-有幸在网上找到了某位大佬的分享
-[音视频技术分享博客](http://blog.yundiantech.com/)
-[雷霄骅](https://blog.csdn.net/leixiaohua1020)
+有幸在网上找到了某位大佬的分享  
+从零开始学习音视频技术的话可以看看这个[音视频技术分享博客](http://blog.yundiantech.com/)  
+此人在FFmpeg源码分析与音视频技术方面留下了宝贵的资料[雷霄骅](https://blog.csdn.net/leixiaohua1020)
