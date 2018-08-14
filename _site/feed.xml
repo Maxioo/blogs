@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-14T16:45:00+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
-</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html">实现Windows录屏功能</title><link href="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html" rel="alternate" type="text/html" title="实现Windows录屏功能" /><published>2018-06-28T00:00:00+08:00</published><updated>2018-06-28T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject</id><content type="html" xml:base="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html">&lt;h2 id=&quot;关于实现windows录屏功能的想法&quot;&gt;关于实现Windows录屏功能的想法&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-14T17:13:18+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
+</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html"></title><link href="http://localhost:4000/2018/08/14/2018-6-28-FirstProject.html" rel="alternate" type="text/html" title="" /><published>2018-08-14T17:13:18+08:00</published><updated>2018-08-14T17:13:18+08:00</updated><id>http://localhost:4000/2018/08/14/2018-6-28-FirstProject</id><content type="html" xml:base="http://localhost:4000/2018/08/14/2018-6-28-FirstProject.html">&lt;h1 id=&quot;关于实现windows录屏功能的想法&quot;&gt;关于实现Windows录屏功能的想法&lt;/h1&gt;
 
 &lt;p&gt;开始 &lt;strong&gt;Camstudio&lt;/strong&gt;的刨析任务不现实，现从底层开始仔细思考该做什么内容。&lt;/p&gt;
 
-&lt;h3 id=&quot;关于实现录屏软件的步骤&quot;&gt;关于实现录屏软件的步骤&lt;/h3&gt;
+&lt;h2 id=&quot;关于实现录屏软件的步骤&quot;&gt;关于实现录屏软件的步骤&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;音频数据的采集&lt;/li&gt;
@@ -13,6 +13,8 @@
  -保证视频和音频的同步&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;基础知识的学习&quot;&gt;基础知识的学习&lt;/h3&gt;
+&lt;h2 id=&quot;基础知识的学习&quot;&gt;基础知识的学习&lt;/h2&gt;
 
-&lt;p&gt;有幸在网上找到了某位大佬的分享 &amp;gt; http://blog.yundiantech.com/?log=index。&lt;/p&gt;</content><author><name>Max</name><email>cd84413336@gmail.com</email></author><category term="音视频技术" /><category term="音视频技术" /><summary type="html">关于实现Windows录屏功能的想法 开始 Camstudio的刨析任务不现实，现从底层开始仔细思考该做什么内容。 关于实现录屏软件的步骤 音频数据的采集 视频数据的采集 音频和视频的解码 将解码后的文件以一定的形式保存下来 -保证视频和音频的同步 基础知识的学习 有幸在网上找到了某位大佬的分享 &amp;gt; http://blog.yundiantech.com/?log=index。</summary></entry></feed>
+&lt;p&gt;有幸在网上找到了某位大佬的分享&lt;br /&gt;
+从零开始学习音视频技术的话可以看看这个&lt;a href=&quot;http://blog.yundiantech.com/&quot;&gt;音视频技术分享博客&lt;/a&gt;&lt;br /&gt;
+此人在FFmpeg源码分析与音视频技术方面留下了宝贵的资料&lt;a href=&quot;https://blog.csdn.net/leixiaohua1020&quot;&gt;雷霄骅&lt;/a&gt;&lt;/p&gt;</content><author><name>Max</name><email>cd84413336@gmail.com</email></author></entry></feed>

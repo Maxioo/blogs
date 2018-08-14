@@ -2,7 +2,9 @@
 layout: article
 title: 实现Windows录屏功能
 category: 音视频技术
-tag: 音视频技术 2018-07
+tag: 
+-音视频技术
+-2018-07
 ---
 
 # 关于实现Windows录屏功能的想法
