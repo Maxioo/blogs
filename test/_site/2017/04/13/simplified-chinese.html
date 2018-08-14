@@ -1,14 +1,14 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="zh-Hans">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>实现Windows录屏功能 - Someone's blog</title>
-<meta name="description" content="关于实现Windows录屏功能的想法开始 Camstudio的刨析任务不现实，现从底层开始仔细思考该做什么内容。关于实现录屏软件的步骤  音频数据的采集  视频数据的采集  音频和视频的解码  将解码后的文件以一定的形式保存下来 -保证视频和音频的同步    基础知识的学习    有幸在网上找到了某位大佬的分享 ...">
-<link rel="canonical" href="http://localhost:4000/2018/06/28/FirstProject.html"><link rel="alternate" type="application/rss+xml" title="Someone's blog" href="http://localhost:4000/feed.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>TeXt - Simplified Chinese | 简体中文 - Someone's blog</title>
+<meta name="description" content="在 _config.yml 或者头信息里设置 lang: zh-Hans 或 lang: zh 后，主题文字变为简体中文。">
+<link rel="canonical" href="http://localhost:4000/2017/04/13/simplified-chinese.html"><link rel="alternate" type="application/rss+xml" title="Someone's blog" href="http://localhost:4000/feed.xml">
 
 <!-- begin favicon --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<!-- end favicon --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+<!-- end favicon --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="" >
 <script>(function() {
   window.isArray = function(val) {
     return Object.prototype.toString.call(val) === '[object Array]';
@@ -221,20 +221,20 @@
   (function() {
     var TEXT_VARIABLES = {
       sources: {
-        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
-        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
-        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
-        chart: 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js',
+        font_awesome: '',
+        jquery: '',
+        leancloud_js_sdk: '',
+        chart: '',
         gitalk: {
-          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
-          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+          js: '',
+          css: ''
         },
-        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML',
-        mermaid: 'https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js'
+        mathjax: '',
+        mermaid: ''
       },
       site: {
         toc: {
-          selectors: 'h1,h2,h3'
+          selectors: ''
         }
       }
     };
@@ -242,51 +242,39 @@
   })();
 </script></head>
   <body><div class="layout--page clearfix"><div class="page__main js-page-main has-aside"><div class="page__main-inner">
-    <div></div><div class="page__header"><header class="header">
-  <div class="main clearfix">
-    <div class="logo"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="24px" height="24px" viewBox="0 0 24 24">
-<style type="text/css">
-	.st0{fill:#666666;}
-</style>
-<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
-	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
-</svg><a title="Someone's Blog
-" href="/">Someone's blog</a></div><nav>
-      <ul><li><a href="/archive.html">Archive</a></li><li><a href="/about.html">About</a></li></ul>
-    </nav></div>
-</header>
-</div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
+    <div></div><div class="page__content"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
 
           <div class="col-1">
-            <article><div class="main__title"><h1>实现Windows录屏功能</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Someone"/></meta><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2018-06-28T00:00:00+08:00"
-              itemprop="datePublished">Jun 28, 2018
+            <article><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Someone"/></meta><ul class="article-info__left-col menu"><li>
+            <a class="button button--secondary button--pill button--sm" href="/?tag=TeXt">TeXt</a>
+          </li><li>
+            <a class="button button--secondary button--pill button--sm" href="/?tag=Simplified+Chinese+%7C+%E7%AE%80">Simplified Chinese | 简</a>
+          </li></ul><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2017-04-13T00:00:00+08:00"
+              itemprop="datePublished">2017年 04月13日
             </time></li>
       </ul></div>
 <div class="js-article-content"><div class="layout--article">
 
-  <div class="article-content" itemprop="articleBody"><h2 id="关于实现windows录屏功能的想法">关于实现Windows录屏功能的想法</h2>
-<p>开始 <strong>Camstudio</strong>的刨析任务不现实，现从底层开始仔细思考该做什么内容。</p>
-<h3 id="关于实现录屏软件的步骤">关于实现录屏软件的步骤</h3>
-<ul>
-  <li>音频数据的采集</li>
-  <li>视频数据的采集</li>
-  <li>音频和视频的解码</li>
-  <li>将解码后的文件以一定的形式保存下来
- -保证视频和音频的同步
-    <h3 id="基础知识的学习">基础知识的学习</h3>
-    <p>有幸在网上找到了某位大佬的分享 &gt; http://blog.yundiantech.com/?log=index。</p>
-  </li>
-</ul>
+  <div class="article-content" itemprop="articleBody"><p>在 _config.yml 或者头信息里设置 <code class="highlighter-rouge">lang: zh-Hans</code> 或 <code class="highlighter-rouge">lang: zh</code> 后，主题文字变为简体中文。</p>
+
+<!--more-->
+
+<p><strong>front matter:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+...
+lang: zh-Hans
+---
+</code></pre></div></div>
+
+<p>可以看到这个页面的导航和版权信息都变成了简体中文。</p>
 </div>
 
-  <footer class="article-footer"><meta itemprop="dateModified" content="2018-06-28T00:00:00+08:00"><div class="article-license"><div class="license card"><div class="clearfix"><a class="octocat" href="https://github.com/someone/someone.github.io/tree/master/_posts/2018-6-28-FirstProject.md">
-        <img alt="View on Github" src="/assets/images/octocat.jpg" />
-      </a><p><a href="https://github.com/someone/someone.github.io/tree/master/_posts/2018-6-28-FirstProject.md">View this POST on Github.</a></p><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> license.</p><a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+  <footer class="article-footer"><meta itemprop="dateModified" content="2017-04-13T00:00:00+08:00"><div class="article-license"><div class="license card"><div class="clearfix"><p>本文遵守 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 许可协议。</p><a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
       <img alt="Creative Commons License" src="/assets/images/license-cc4.png" />
-    </a><p></p>
+    </a><p>欢迎转载，转载需注明出处，且禁止用于商业目的。</p>
   </div>
-</div></div></footer></div>
+</div></div></footer><div class="article-previous-next clearfix"><div class="article-previous"><span></span><a href="/2017/04/19/modify-date.html">TeXt - Modify Date</a></div><div class="article-next"><span></span><a href="/2017/04/12/traditional-chinese.html">TeXt - Traditional Chinese | 繁體中文</a></div></div></div>
 
 <script>(function() {
   var SOURCES = window.TEXT_VARIABLES.sources;
@@ -312,22 +300,19 @@
     });
   });
 })();</script></div></article>
-          </div></div></div>
+          </div></div>
 
       <div class="page__footer">
 <div class="footer js-page-footer">
   <div class="main">
     <aside><div class="follow-me">
   <ul class="menu menu--nowrap menu--center" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Someone"><link itemprop="url" href="http://localhost:4000/"><li title="Send me Email.">
-      <a class="button button--circle mail-button" itemprop="sameAs" href="mailto:someone@somemail.com" target="_blank">
-        <i class="fas fa-envelope"></i>
-      </a></ul>
+    <meta itemprop="name" content="Someone"><link itemprop="url" href="http://localhost:4000/"></ul>
 </div>
 </aside>
     <footer class="site-info"><p>
-        <span class="site-info__copyright">© Someone's blog 2018</span>
-        <a class="site-info__rss" type="application/rss+xml" href="/feed.xml">RSS</a>
+        <span class="site-info__copyright">© Someone's blog 2015 - 2017</span>
+        <a class="site-info__rss" type="application/rss+xml" href="/">RSS</a>
       </p>
       <p>Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a succinct theme for blogging." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
