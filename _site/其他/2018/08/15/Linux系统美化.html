@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>实现Windows录屏功能的想法 - Max's blog</title>
-<meta name="description" content="关于实现Windows录屏功能的想法开始 Camstudio的刨析任务不现实，现从底层开始仔细思考该做什么内容。关于实现录屏软件的步骤  音频数据的采集  视频数据的采集  音频和视频的解码  将解码后的文件以一定的形式保存下来 -保证视频和音频的同步基础知识的学习有幸在网上找到了某位大佬的分享从零开始学习音视频...">
-<link rel="canonical" href="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html"><link rel="alternate" type="application/rss+xml" title="Max's blog" href="http://localhost:4000/feed.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Linux的桌面美化 - Max's blog</title>
+<meta name="description" content="Ubuntu的美化参考博客https://www.cnblogs.com/feipeng8848/p/8970556.htmlGnome-tweak-tool的安装首先使用命令sudo apt-get install gnome-tweak-tool有了Gnome-tweak-tool这个插件后，我们就可以轻松的...">
+<link rel="canonical" href="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html"><link rel="alternate" type="application/rss+xml" title="Max's blog" href="http://localhost:4000/feed.xml">
 
 <!-- begin favicon --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
@@ -259,42 +259,69 @@
 </div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
 
           <div class="col-1">
-            <article><div class="main__title"><h1>实现Windows录屏功能的想法</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Max"/></meta><ul class="article-info__left-col menu"><li>
-            <a class="button button--secondary button--pill button--sm" href="/archive.html?tag=%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF">音视频技术</a>
-          </li></ul><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2018-06-28T00:00:00+08:00"
-              itemprop="datePublished">Jun 28, 2018
+            <article><div class="main__title"><h1>Linux的桌面美化</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Max"/></meta><ul class="article-info__left-col menu"><li>
+            <a class="button button--secondary button--pill button--sm" href="/archive.html?tag=%E5%85%B6%E4%BB%96">其他</a>
+          </li></ul><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2018-08-15T00:00:00+08:00"
+              itemprop="datePublished">Aug 15, 2018
             </time></li>
       </ul></div>
 <div class="js-article-content"><div class="layout--article">
 
-  <div class="article-content" itemprop="articleBody"><h1 id="关于实现windows录屏功能的想法">关于实现Windows录屏功能的想法</h1>
+  <div class="article-content" itemprop="articleBody"><h1 id="ubuntu的美化">Ubuntu的美化</h1>
 
-<p>开始 <strong>Camstudio</strong>的刨析任务不现实，现从底层开始仔细思考该做什么内容。</p>
+<p><a href="https://www.cnblogs.com/feipeng8848/p/8970556.html">参考博客https://www.cnblogs.com/feipeng8848/p/8970556.html</a></p>
 
-<h2 id="关于实现录屏软件的步骤">关于实现录屏软件的步骤</h2>
+<h2 id="gnome-tweak-tool的安装">Gnome-tweak-tool的安装</h2>
 
-<ul>
-  <li>音频数据的采集</li>
-  <li>视频数据的采集</li>
-  <li>音频和视频的解码</li>
-  <li>将解码后的文件以一定的形式保存下来
- -保证视频和音频的同步</li>
-</ul>
+<p>首先使用命令</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-tweak-tool
+</code></pre></div></div>
+<p>有了Gnome-tweak-tool这个插件后，我们就可以轻松的对Ubuntu桌面进行美化了，例如顶栏的隐藏，图标的更换，主题的更换等等，可以让整个桌面变得赏心悦目。</p>
 
-<h2 id="基础知识的学习">基础知识的学习</h2>
+<h2 id="优化">优化</h2>
 
-<p>有幸在网上找到了某位大佬的分享<br />
-从零开始学习音视频技术的话可以看看这个<a href="http://blog.yundiantech.com/">音视频技术分享博客</a><br />
-此人在FFmpeg源码分析与音视频技术方面留下了宝贵的资料<a href="https://blog.csdn.net/leixiaohua1020">雷霄骅</a></p>
+<p>找到“优化”(Tweaks)这个程序的入口,在外观选项中我们可以发现，Shell的栏中是不可被选中的，此时我们需要另外安装Gnome Extension.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-shell-extensions
+</code></pre></div></div>
+<p>安装完成后在优化(Tweaks)中选择Extensions的选项.<br />
+打开Users Themes,注意如果发现显示选项中Shell的感叹号没有消除那么需要重启一下。<br />
+至此工具安装配置完成。</p>
+
+<h2 id="安装shell主题">安装Shell主题</h2>
+
+<p>这里我选择的主题是<a href="https://www.opendesktop.org/s/Gnome/p/1013030/">Flat Remix GNOME Themes</a>,可以看看介绍，共有三种样式，也可以都下载下来。<br />
+下载完成之后使用</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xvf XXXX.tar.xz
+</code></pre></div></div>
+<p>进行解压，然后将里面的文件复制到 /usr/share/theme/ 里，重启后即可在优化(TWeaks)里进行选择。</p>
+
+<h2 id="安装gtk主题">安装Gtk主题</h2>
+
+<p><a href="https://www.opendesktop.org/p/1214931/">GTK主题</a> 安装方式同上</p>
+
+<h2 id="安装图标包">安装图标包</h2>
+
+<p><a href="https://www.gnome-look.org/p/1012430/">图标主题</a> 安装方式同上，只是解压完成后将文件夹移动到/usr/share/icons/里。</p>
+
+<h2 id="gnome桌面顶栏界面隐藏">Gnome桌面顶栏界面隐藏</h2>
+<p>首先安装hidetopbar扩展</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-shell-extension-autohidebar
+</code></pre></div></div>
+<p>重启后即可发现在Extensions里多出一个Hide top bar的选项。</p>
+
+<h2 id="完成">完成</h2>
+
+<p>至此界面美化工作基本完成，其余细节可以根据自己喜好进行微调。这是安装好后屏幕的样子
+！<a href="https://github.com/Maxioo/MaxChen.github.io/blob/master/assets/2018-08-15.png">截图</a></p>
 </div>
 
-  <footer class="article-footer"><meta itemprop="dateModified" content="2018-06-28T00:00:00+08:00"><div class="article-license"><div class="license card"><div class="clearfix"><a class="octocat" href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2018-6-28-FirstProject.md">
+  <footer class="article-footer"><meta itemprop="dateModified" content="2018-08-15T00:00:00+08:00"><div class="article-license"><div class="license card"><div class="clearfix"><a class="octocat" href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2018-8-15-Linux系统美化.md">
         <img alt="View on Github" src="/assets/images/octocat.jpg" />
-      </a><p><a href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2018-6-28-FirstProject.md">View this POST on Github.</a></p><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> license.</p><a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+      </a><p><a href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2018-8-15-Linux系统美化.md">View this POST on Github.</a></p><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> license.</p><a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
       <img alt="Creative Commons License" src="/assets/images/license-cc4.png" />
     </a><p></p>
   </div>
-</div></div></footer><div class="article-previous-next clearfix"><div class="article-previous"><span>PREVIOUS</span><a href="/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html">Linux的桌面美化</a></div></div></div>
+</div></div></footer><div class="article-previous-next clearfix"><div class="article-next"><span>NEXT</span><a href="/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html">实现Windows录屏功能的想法</a></div></div></div>
 
 <script>(function() {
   var SOURCES = window.TEXT_VARIABLES.sources;

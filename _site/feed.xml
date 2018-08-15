@@ -1,5 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-14T17:25:39+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
-</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html">实现Windows录屏功能的想法</title><link href="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html" rel="alternate" type="text/html" title="实现Windows录屏功能的想法" /><published>2018-06-28T00:00:00+08:00</published><updated>2018-06-28T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject</id><content type="html" xml:base="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html">&lt;h1 id=&quot;关于实现windows录屏功能的想法&quot;&gt;关于实现Windows录屏功能的想法&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-15T10:10:39+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
+</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html">Linux的桌面美化</title><link href="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html" rel="alternate" type="text/html" title="Linux的桌面美化" /><published>2018-08-15T00:00:00+08:00</published><updated>2018-08-15T00:00:00+08:00</updated><id>http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html">&lt;h1 id=&quot;ubuntu的美化&quot;&gt;Ubuntu的美化&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/feipeng8848/p/8970556.html&quot;&gt;参考博客https://www.cnblogs.com/feipeng8848/p/8970556.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gnome-tweak-tool的安装&quot;&gt;Gnome-tweak-tool的安装&lt;/h2&gt;
+
+&lt;p&gt;首先使用命令&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install gnome-tweak-tool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;有了Gnome-tweak-tool这个插件后，我们就可以轻松的对Ubuntu桌面进行美化了，例如顶栏的隐藏，图标的更换，主题的更换等等，可以让整个桌面变得赏心悦目。&lt;/p&gt;
+
+&lt;h2 id=&quot;优化&quot;&gt;优化&lt;/h2&gt;
+
+&lt;p&gt;找到“优化”(Tweaks)这个程序的入口,在外观选项中我们可以发现，Shell的栏中是不可被选中的，此时我们需要另外安装Gnome Extension.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install gnome-shell-extensions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装完成后在优化(Tweaks)中选择Extensions的选项.&lt;br /&gt;
+打开Users Themes,注意如果发现显示选项中Shell的感叹号没有消除那么需要重启一下。&lt;br /&gt;
+至此工具安装配置完成。&lt;/p&gt;
+
+&lt;h2 id=&quot;安装shell主题&quot;&gt;安装Shell主题&lt;/h2&gt;
+
+&lt;p&gt;这里我选择的主题是&lt;a href=&quot;https://www.opendesktop.org/s/Gnome/p/1013030/&quot;&gt;Flat Remix GNOME Themes&lt;/a&gt;,可以看看介绍，共有三种样式，也可以都下载下来。&lt;br /&gt;
+下载完成之后使用&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar -xvf XXXX.tar.xz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;进行解压，然后将里面的文件复制到 /usr/share/theme/ 里，重启后即可在优化(TWeaks)里进行选择。&lt;/p&gt;
+
+&lt;h2 id=&quot;安装gtk主题&quot;&gt;安装Gtk主题&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.opendesktop.org/p/1214931/&quot;&gt;GTK主题&lt;/a&gt; 安装方式同上&lt;/p&gt;
+
+&lt;h2 id=&quot;安装图标包&quot;&gt;安装图标包&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.gnome-look.org/p/1012430/&quot;&gt;图标主题&lt;/a&gt; 安装方式同上，只是解压完成后将文件夹移动到/usr/share/icons/里。&lt;/p&gt;
+
+&lt;h2 id=&quot;gnome桌面顶栏界面隐藏&quot;&gt;Gnome桌面顶栏界面隐藏&lt;/h2&gt;
+&lt;p&gt;首先安装hidetopbar扩展&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install gnome-shell-extension-autohidebar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;重启后即可发现在Extensions里多出一个Hide top bar的选项。&lt;/p&gt;
+
+&lt;h2 id=&quot;完成&quot;&gt;完成&lt;/h2&gt;
+
+&lt;p&gt;至此界面美化工作基本完成，其余细节可以根据自己喜好进行微调。这是安装好后屏幕的样子
+！&lt;a href=&quot;https://github.com/Maxioo/MaxChen.github.io/blob/master/assets/2018-08-15.png&quot;&gt;截图&lt;/a&gt;&lt;/p&gt;</content><author><name>Max</name><email>cd84413336@gmail.com</email></author><category term="其他" /><category term="其他" /><summary type="html">Ubuntu的美化 参考博客https://www.cnblogs.com/feipeng8848/p/8970556.html Gnome-tweak-tool的安装 首先使用命令 sudo apt-get install gnome-tweak-tool 有了Gnome-tweak-tool这个插件后，我们就可以轻松的对Ubuntu桌面进行美化了，例如顶栏的隐藏，图标的更换，主题的更换等等，可以让整个桌面变得赏心悦目。 优化 找到“优化”(Tweaks)这个程序的入口,在外观选项中我们可以发现，Shell的栏中是不可被选中的，此时我们需要另外安装Gnome Extension. sudo apt-get install gnome-shell-extensions 安装完成后在优化(Tweaks)中选择Extensions的选项. 打开Users Themes,注意如果发现显示选项中Shell的感叹号没有消除那么需要重启一下。 至此工具安装配置完成。 安装Shell主题 这里我选择的主题是Flat Remix GNOME Themes,可以看看介绍，共有三种样式，也可以都下载下来。 下载完成之后使用 tar -xvf XXXX.tar.xz 进行解压，然后将里面的文件复制到 /usr/share/theme/ 里，重启后即可在优化(TWeaks)里进行选择。 安装Gtk主题 GTK主题 安装方式同上 安装图标包 图标主题 安装方式同上，只是解压完成后将文件夹移动到/usr/share/icons/里。 Gnome桌面顶栏界面隐藏 首先安装hidetopbar扩展 sudo apt-get install gnome-shell-extension-autohidebar 重启后即可发现在Extensions里多出一个Hide top bar的选项。 完成 至此界面美化工作基本完成，其余细节可以根据自己喜好进行微调。这是安装好后屏幕的样子 ！截图</summary></entry><entry><title type="html">实现Windows录屏功能的想法</title><link href="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html" rel="alternate" type="text/html" title="实现Windows录屏功能的想法" /><published>2018-06-28T00:00:00+08:00</published><updated>2018-06-28T00:00:00+08:00</updated><id>http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject</id><content type="html" xml:base="http://localhost:4000/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF/2018/06/28/FirstProject.html">&lt;h1 id=&quot;关于实现windows录屏功能的想法&quot;&gt;关于实现Windows录屏功能的想法&lt;/h1&gt;
 
 &lt;p&gt;开始 &lt;strong&gt;Camstudio&lt;/strong&gt;的刨析任务不现实，现从底层开始仔细思考该做什么内容。&lt;/p&gt;
 

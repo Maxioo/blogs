@@ -270,9 +270,12 @@
   <ul class="menu">
     <li>
       <button type="button" class="button button--secondary button--pill tag-button js-article-tag " data-encode="">
-        Show All<div class="tag-button__count">1</div>
+        Show All<div class="tag-button__count">2</div>
       </button>
-    </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF">
+    </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E5%85%B6%E4%BB%96">
+          <span>其他</span><div class="tag-button__count">1</div>
+        </button>
+      </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF">
           <span>音视频技术</span><div class="tag-button__count">1</div>
         </button>
       </li></ul>
@@ -341,7 +344,7 @@
     };
   })();
 
-  var data = initData('{"2018":[{"key":"1","title":"%E5%AE%9E%E7%8E%B0Windows%E5%BD%95%E5%B1%8F%E5%8A%9F%E8%83%BD%E7%9A%84%E6%83%B3%E6%B3%95","tags":["%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF"],"url":"%2F%25E9%259F%25B3%25E8%25A7%2586%25E9%25A2%2591%25E6%258A%2580%25E6%259C%25AF%2F2018%2F06%2F28%2FFirstProject.html","date":"Jun 28"}]}');
+  var data = initData('{"2018":[{"key":"1","title":"Linux%E7%9A%84%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96","tags":["%E5%85%B6%E4%BB%96"],"url":"%2F%25E5%2585%25B6%25E4%25BB%2596%2F2018%2F08%2F15%2FLinux%25E7%25B3%25BB%25E7%25BB%259F%25E7%25BE%258E%25E5%258C%2596.html","date":"Aug 15"},{"key":"2","title":"%E5%AE%9E%E7%8E%B0Windows%E5%BD%95%E5%B1%8F%E5%8A%9F%E8%83%BD%E7%9A%84%E6%83%B3%E6%B3%95","tags":["%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF"],"url":"%2F%25E9%259F%25B3%25E8%25A7%2586%25E9%25A2%2591%25E6%258A%2580%25E6%259C%25AF%2F2018%2F06%2F28%2FFirstProject.html","date":"Jun 28"}]}');
 
   var searchByTag = memorize(function(tag) {
     var i, j, cur, _tags, _tag, _data = {};
