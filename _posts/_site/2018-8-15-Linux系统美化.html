@@ -1,0 +1,46 @@
+<h1 id="ubuntu的美化">Ubuntu的美化</h1>
+
+<p><a href="https://www.cnblogs.com/feipeng8848/p/8970556.html">参考博客https://www.cnblogs.com/feipeng8848/p/8970556.html</a></p>
+
+<h2 id="gnome-tweak-tool的安装">Gnome-tweak-tool的安装</h2>
+
+<p>首先使用命令</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-tweak-tool
+</code></pre></div></div>
+<p>有了Gnome-tweak-tool这个插件后，我们就可以轻松的对Ubuntu桌面进行美化了，例如顶栏的隐藏，图标的更换，主题的更换等等，可以让整个桌面变得赏心悦目。</p>
+
+<h2 id="优化">优化</h2>
+
+<p>找到“优化”(Tweaks)这个程序的入口,在外观选项中我们可以发现，Shell的栏中是不可被选中的，此时我们需要另外安装Gnome Extension.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-shell-extensions
+</code></pre></div></div>
+<p>安装完成后在优化(Tweaks)中选择Extensions的选项.<br />
+打开Users Themes,注意如果发现显示选项中Shell的感叹号没有消除那么需要重启一下。<br />
+至此工具安装配置完成。</p>
+
+<h2 id="安装shell主题">安装Shell主题</h2>
+
+<p>这里我选择的主题是<a href="https://www.opendesktop.org/s/Gnome/p/1013030/">Flat Remix GNOME Themes</a>,可以看看介绍，共有三种样式，也可以都下载下来。<br />
+下载完成之后使用</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xvf XXXX.tar.xz
+</code></pre></div></div>
+<p>进行解压，然后将里面的文件复制到 /usr/share/theme/ 里，重启后即可在优化(TWeaks)里进行选择。</p>
+
+<h2 id="安装gtk主题">安装Gtk主题</h2>
+
+<p><a href="https://www.opendesktop.org/p/1214931/">GTK主题</a> 安装方式同上</p>
+
+<h2 id="安装图标包">安装图标包</h2>
+
+<p><a href="https://www.gnome-look.org/p/1012430/">图标主题</a> 安装方式同上，只是解压完成后将文件夹移动到/usr/share/icons/里。</p>
+
+<h2 id="gnome桌面顶栏界面隐藏">Gnome桌面顶栏界面隐藏</h2>
+<p>首先安装hidetopbar扩展</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install gnome-shell-extension-autohidebar
+</code></pre></div></div>
+<p>重启后即可发现在Extensions里多出一个Hide top bar的选项。</p>
+
+<h2 id="完成">完成</h2>
+
+<p>至此界面美化工作基本完成，其余细节可以根据自己喜好进行微调。这是安装好后屏幕的样子<br />
+<img src="https://github.com/Maxioo/MaxChen.github.io/blob/master/assets/2018-08-15.png" alt="截图" /></p>
