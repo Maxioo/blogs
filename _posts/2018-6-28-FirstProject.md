@@ -1,13 +1,18 @@
 ---
 layout: article
 title: 实现Windows录屏功能的想法
+key: 100001
 category: 音视频技术
 tags: 音视频技术
+date: 2018-06-28 15:00:00 +08:00
+modify_date: 2019-02-18 14:40:00 +08:00
 ---
 
 # 关于实现Windows录屏功能的想法
 
 开始 **Camstudio**的刨析任务不现实，现从底层开始仔细思考该做什么内容。
+
+<!--more-->
 
 ## 关于实现录屏软件的步骤
 

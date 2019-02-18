@@ -28,7 +28,7 @@ description: > # this means to ignore newlines until "Language & timezone"
 ## => Language and Timezone
 ##############################
 lang: # the language of your site, "en" (default, English), "zh"(简体中文), "zh-Hans"(简体中文), "zh-Hant"(繁體中文)
-timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+timezone: Asia/Shanghai # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 
 ## => Author and Social
@@ -55,6 +55,8 @@ repository_tree: master
 ##############################
 paths:
   base: /
+  home: /
+  archive: /archive.html
 
 
 ## => Post
@@ -62,6 +64,7 @@ paths:
 ## excerpt
 excerpt_separator: <!--more-->
 excerpt_type: html # text (default), html
+
 
 ## TOC
 toc:
@@ -91,11 +94,14 @@ paginate_path: /page:num # don't change this unless for special need
 sources: # bootcdn (default), unpkg
 
 
+
 ## => Comments
 ##############################
 ## Disqus
-disqus:
-  shortname: # the Disqus shortname for the site
+comments: 
+  provider: disqus
+  disqus:
+    shortname: Maxioo-github-io # the Disqus shortname for the site
 
 ## Gitalk
 # please refer to https://github.com/gitalk/gitalk for more info.
@@ -153,6 +159,7 @@ defaults:
       path: ""
       type: posts
     values:
+      layout: article
       license: true
       aside:
         toc: true

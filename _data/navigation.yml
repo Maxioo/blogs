@@ -1,4 +1,6 @@
 header:
+  - title:      Home
+    url:        /
   - titles:
       en:       Archive
       zh:       归档

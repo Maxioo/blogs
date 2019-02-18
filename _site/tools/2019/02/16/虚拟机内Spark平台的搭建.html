@@ -2,7 +2,7 @@
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>虚拟机内Spark平台的搭建 - Max's blog</title>
-<meta name="description" content="参考博客Linux上安装Hadoop集群(CentOS7+hadoop-2.8.0)准备工作下载Centos镜像，这里Centos7有DVD、Everything、Minimal等版本，如果是准备在实体机上搭建，可以选择Everything版本。Centos7 64位镜像Minimal版本包括东西太少，这里我们选...">
+<meta name="description" content="由于要测试一个多序列比对软件的Spark版本，PastaSpark，所以想着自己来搭建一个spark集群来测试这个软件能不能用。">
 <link rel="canonical" href="http://localhost:4000/tools/2019/02/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85Spark%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA.html"><link rel="alternate" type="application/rss+xml" title="Max's blog" href="http://localhost:4000/feed.xml">
 
 <!-- begin favicon --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
@@ -253,7 +253,7 @@
 	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
 </svg><a title="Max's Blog
 " href="/">Max's blog</a></div><nav>
-      <ul><li><a href="/archive.html">Archive</a></li><li><a href="/about.html">About</a></li></ul>
+      <ul><li><a href="/">Home</a></li><li><a href="/archive.html">Archive</a></li><li><a href="/about.html">About</a></li></ul>
     </nav></div>
 </header>
 </div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
@@ -261,13 +261,18 @@
           <div class="col-1">
             <article><div class="main__title"><h1>虚拟机内Spark平台的搭建</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Max"/></meta><ul class="article-info__left-col menu"><li>
             <a class="button button--secondary button--pill button--sm" href="/archive.html?tag=tools">tools</a>
-          </li></ul><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2019-02-16T00:00:00+08:00"
+          </li></ul><ul class="article-info__right-col menu"><li class="publish-date"><time datetime="2019-02-16T19:00:00+08:00"
               itemprop="datePublished">Feb 16, 2019
             </time></li>
       </ul></div>
 <div class="js-article-content"><div class="layout--article">
 
-  <div class="article-content" itemprop="articleBody"><p><a href="https://blog.csdn.net/pucao_cug/article/details/71698903">参考博客Linux上安装Hadoop集群(CentOS7+hadoop-2.8.0)</a></p>
+  <div class="article-content" itemprop="articleBody"><p>由于要测试一个多序列比对软件的Spark版本，PastaSpark，所以想着自己来搭建一个
+spark集群来测试这个软件能不能用。</p>
+
+<!--more-->
+
+<p><a href="https://blog.csdn.net/pucao_cug/article/details/71698903">参考博客Linux上安装Hadoop集群(CentOS7+hadoop-2.8.0)</a></p>
 
 <h1 id="准备工作">准备工作</h1>
 
@@ -626,7 +631,9 @@ hserver3
 </ol>
 </div>
 
-  <footer class="article-footer"><meta itemprop="dateModified" content="2019-02-16T00:00:00+08:00"><div class="article-license"><div class="license card"><div class="clearfix"><a class="octocat" href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2019-2-16-虚拟机内Spark平台的搭建.md">
+  <footer class="article-footer"><span>Last updated
+        <time datetime="2019-02-18T14:40:00+08:00" itemprop="dateModified">Feb 18, 2019</time>
+      </span><div class="article-license"><div class="license card"><div class="clearfix"><a class="octocat" href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2019-2-16-虚拟机内Spark平台的搭建.md">
         <img alt="View on Github" src="/assets/images/octocat.jpg" />
       </a><p><a href="https://github.com/Maxioo/MaxChen.github.io/tree/master/_posts/2019-2-16-虚拟机内Spark平台的搭建.md">View this POST on Github.</a></p><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> license.</p><a class="license-img" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
       <img alt="Creative Commons License" src="/assets/images/license-cc4.png" />
