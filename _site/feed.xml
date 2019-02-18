@@ -1,5 +1,361 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-10T00:23:15+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
-</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html">Linux的桌面美化</title><link href="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html" rel="alternate" type="text/html" title="Linux的桌面美化" /><published>2018-08-15T00:00:00+08:00</published><updated>2018-08-15T00:00:00+08:00</updated><id>http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html">&lt;h1 id=&quot;ubuntu的美化&quot;&gt;Ubuntu的美化&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-02-18T11:50:13+08:00</updated><id>http://localhost:4000/</id><title type="html">Max’s blog</title><subtitle>Max's Blog
+</subtitle><author><name>Max</name><email>cd84413336@gmail.com</email></author><entry><title type="html">虚拟机内Spark平台的搭建</title><link href="http://localhost:4000/tools/2019/02/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85Spark%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA.html" rel="alternate" type="text/html" title="虚拟机内Spark平台的搭建" /><published>2019-02-16T00:00:00+08:00</published><updated>2019-02-16T00:00:00+08:00</updated><id>http://localhost:4000/tools/2019/02/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85Spark%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA</id><content type="html" xml:base="http://localhost:4000/tools/2019/02/16/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85Spark%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA.html">&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/pucao_cug/article/details/71698903&quot;&gt;参考博客Linux上安装Hadoop集群(CentOS7+hadoop-2.8.0)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;准备工作&quot;&gt;准备工作&lt;/h1&gt;
+
+&lt;p&gt;下载Centos镜像，这里Centos7有DVD、Everything、Minimal等版本，如果是准备在实体机上搭建，可以选择Everything版本。&lt;a href=&quot;http://mirrors.aliyun.com/centos/7/isos/x86_64/&quot;&gt;Centos7 64位镜像&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Minimal版本包括东西太少，这里我们选择DVD版本就好。(应需而异)&lt;/p&gt;
+
+&lt;p&gt;Hadoop的安装包，因为教程里用的版本是2.8的，这里我下载的也是2.8.5的Hadoop安装包&lt;a href=&quot;https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-2.8.5/hadoop-2.8.5.tar.gz&quot;&gt;Hadoop2.8.5下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Spark安装包，同上&lt;a href=&quot;https://www.apache.org/dyn/closer.lua/spark/spark-2.2.3/spark-2.2.3-bin-hadoop2.7.tgz&quot;&gt;Spark-2.2.3-bin-hadoop2.7&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Java安装包，注意需要JDK 8&lt;a href=&quot;https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;JDK1.8.0-201&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;linux系统安装&quot;&gt;Linux系统安装&lt;/h2&gt;
+
+&lt;p&gt;我们在VMware上安装三个CentOs为例，VMware安装这里不细讲，这里有几个点需要注意。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;SoftWare Selection里边不要选择Minimal install，这里我根据博客里选择的是Infrastructure Server,DNS Name Server,E-mail Server.建议新手选择带图形界面的版本。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Network &amp;amp; Host Name勾选&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在安装时，可以设置Root密码和建立User。这里我为了方便只使用Root。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;实现机器间互连&quot;&gt;实现机器间互连&lt;/h3&gt;
+
+&lt;p&gt;首先使用ifconfig查看三台机器的ip地址，我这里三台IP地址分别是
+192.168.80.130
+192.168.80.131
+192.168.80.132&lt;/p&gt;
+
+&lt;p&gt;同时把三台机器的名称改为server1 server2 server3，使用hostname命令修改。然后在
+三台机器上分别修改/etc/hosts文件，改为&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;192.168.80.130   server1
+192.168.80.131   server2
+192.168.80.132   server3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;改好之后在每台机器上看是否能ping通其他机器。以server1为例&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ping -c 3 server2
+ping -c 3 server3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;测试成功后在每台机器上执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh-keygen -t rsa -P ''
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;执行之后在你用户文件夹下会多出一个.ssh文件夹，里面会有一个叫id_rsa.pub的文件，这是我们所需要的公钥。&lt;/p&gt;
+
+&lt;p&gt;我们把三台机器上的公钥复制到一起并保存为一个叫authorized_keys的文件，然后把这个文件发送到每个系统的.ssh文件夹内。&lt;/p&gt;
+
+&lt;p&gt;使用ssh登陆其他机器，以server1为例&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh server2
+ssh server3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意：在ssh登陆后要使用exit命令退出，不然所做的所有操作都是作用在另外一台机器上&lt;/p&gt;
+
+&lt;h2 id=&quot;spark所需前置软件的安装&quot;&gt;Spark所需前置软件的安装&lt;/h2&gt;
+
+&lt;h3 id=&quot;安装java&quot;&gt;安装JAVA&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/pucao_cug/article/details/68948639&quot;&gt;Linux上安装JAVA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;安装hadoop&quot;&gt;安装Hadoop&lt;/h3&gt;
+
+&lt;h4 id=&quot;解压缩&quot;&gt;解压缩&lt;/h4&gt;
+
+&lt;p&gt;假设Hadoop的文件夹在/opt处&lt;/p&gt;
+
+&lt;h4 id=&quot;新建目录&quot;&gt;新建目录&lt;/h4&gt;
+
+&lt;p&gt;在/root目录下新建几个目录，复制粘贴执行下面的命令：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir  /root/hadoop
+mkdir  /root/hadoop/tmp
+mkdir  /root/hadoop/var
+mkdir  /root/hadoop/dfs
+mkdir  /root/hadoop/dfs/name
+mkdir  /root/hadoop/dfs/data
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改core-sitexml&quot;&gt;修改core-site.xml&lt;/h4&gt;
+
+&lt;p&gt;修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/core-site.xml文件
+在&lt;configuration&gt;节点加入配置:&lt;/configuration&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;/root/hadoop/tmp&amp;lt;/value&amp;gt;
+
+        &amp;lt;description&amp;gt;Abase for other temporary directories.&amp;lt;/description&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;fs.default.name&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;hdfs://hserver1:9000&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改hadoop-envsh&quot;&gt;修改hadoop-env.sh&lt;/h4&gt;
+
+&lt;p&gt;修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/hadoop-env.sh文件&lt;/p&gt;
+
+&lt;p&gt;将export   JAVA_HOME=${JAVA_HOME}修改为：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export JAVA_HOME=/opt/java/jdk1.8.0_121
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改hdfs-sitexml&quot;&gt;修改hdfs-site.xml&lt;/h4&gt;
+
+&lt;p&gt;修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/hdfs-site.xml文件在&lt;configuration&gt;节点内加入配置:&lt;/configuration&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+
+   &amp;lt;name&amp;gt;dfs.name.dir&amp;lt;/name&amp;gt;
+
+   &amp;lt;value&amp;gt;/root/hadoop/dfs/name&amp;lt;/value&amp;gt;
+
+   &amp;lt;description&amp;gt;Path on the local filesystem where theNameNode stores the namespace and transactions logs persistently.&amp;lt;/description&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+&amp;lt;property&amp;gt;
+
+   &amp;lt;name&amp;gt;dfs.data.dir&amp;lt;/name&amp;gt;
+
+   &amp;lt;value&amp;gt;/root/hadoop/dfs/data&amp;lt;/value&amp;gt;
+
+   &amp;lt;description&amp;gt;Comma separated list of paths on the localfilesystem of a DataNode where it should store its blocks.&amp;lt;/description&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+&amp;lt;property&amp;gt;
+
+   &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;
+
+   &amp;lt;value&amp;gt;2&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+&amp;lt;property&amp;gt;
+
+      &amp;lt;name&amp;gt;dfs.permissions&amp;lt;/name&amp;gt;
+
+      &amp;lt;value&amp;gt;false&amp;lt;/value&amp;gt;
+
+      &amp;lt;description&amp;gt;need not permissions&amp;lt;/description&amp;gt;
+
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;新建并修改mapred-sitexml&quot;&gt;新建并修改mapred-site.xml&lt;/h4&gt;
+
+&lt;p&gt;在该版本中，有一个名为mapred-site.xml.template的文件，复制该文件，然后改名为mapred-site.xml，命令是：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cp   /opt/hadoop/hadoop-2.8.0/etc/hadoop/mapred-site.xml.template     /opt/hadoop/hadoop-2.8.0/etc/hadoop/mapred-site.xml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改这个新建的mapred-site.xml文件，在&lt;configuration&gt;节点内加入配置:&lt;/configuration&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;property&amp;gt;
+
+   &amp;lt;name&amp;gt;mapred.job.tracker&amp;lt;/name&amp;gt;
+
+   &amp;lt;value&amp;gt;hserver1:49001&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+&amp;lt;property&amp;gt;
+
+      &amp;lt;name&amp;gt;mapred.local.dir&amp;lt;/name&amp;gt;
+
+       &amp;lt;value&amp;gt;/root/hadoop/var&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+&amp;lt;property&amp;gt;
+
+       &amp;lt;name&amp;gt;mapreduce.framework.name&amp;lt;/name&amp;gt;
+
+       &amp;lt;value&amp;gt;yarn&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改slaves文件&quot;&gt;修改slaves文件&lt;/h4&gt;
+
+&lt;p&gt;修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/slaves文件，将里面的localhost删除，添加如下内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hserver2
+hserver3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;修改yarn-sitexml&quot;&gt;修改yarn-site.xml&lt;/h4&gt;
+&lt;p&gt;3.2.3.6 修改yarn-site.xml文件
+修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/yarn-site.xml文件，
+在&lt;configuration&gt;节点内加入配置(注意了，内存根据机器配置越大越好，最少也得1.5G不然连example都跑不起来):&lt;/configuration&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.hostname&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;hserver1&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;description&amp;gt;The address of the applications manager interface in the RM.&amp;lt;/description&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8032&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;description&amp;gt;The address of the scheduler interface.&amp;lt;/description&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.scheduler.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8030&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;description&amp;gt;The http address of the RM web application.&amp;lt;/description&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8088&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;description&amp;gt;The https adddress of the RM web application.&amp;lt;/description&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.https.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8090&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.resource-tracker.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8031&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;description&amp;gt;The address of the RM admin interface.&amp;lt;/description&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.resourcemanager.admin.address&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8033&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.nodemanager.aux-services&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;mapreduce_shuffle&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.scheduler.maximum-allocation-mb&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;2048&amp;lt;/value&amp;gt;
+
+        &amp;lt;discription&amp;gt;每个节点可用内存,单位MB,默认8182MB&amp;lt;/discription&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.nodemanager.vmem-pmem-ratio&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;2.1&amp;lt;/value&amp;gt;
+
+   &amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.nodemanager.resource.memory-mb&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;2048&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+
+   &amp;lt;property&amp;gt;
+
+        &amp;lt;name&amp;gt;yarn.nodemanager.vmem-check-enabled&amp;lt;/name&amp;gt;
+
+        &amp;lt;value&amp;gt;false&amp;lt;/value&amp;gt;
+
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装spark&quot;&gt;安装Spark&lt;/h3&gt;
+
+&lt;p&gt;前提要安装scala，这里不多赘述。&lt;/p&gt;
+
+&lt;p&gt;具体看&lt;a href=&quot;https://www.cnblogs.com/tijun/p/7561718.html&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;启动spark&quot;&gt;启动Spark&lt;/h2&gt;
+
+&lt;p&gt;要启动Spark首先得启动Hadoop&lt;/p&gt;
+
+&lt;h3 id=&quot;启动hadoop&quot;&gt;启动Hadoop&lt;/h3&gt;
+
+&lt;p&gt;先去hadoop目录下的bin目录，执行命令&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./hadoop namenode -format
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后去sbin目录下执行./start-all.sh&lt;/p&gt;
+
+&lt;h3 id=&quot;启动spark-1&quot;&gt;启动Spark&lt;/h3&gt;
+
+&lt;p&gt;也在sbin目录下面执行./start-all.sh&lt;/p&gt;
+
+&lt;p&gt;若在server1下执行jps命令能看到Master，则成功。
+在其他机器上能看到Worker，则成功。&lt;/p&gt;
+
+&lt;h2 id=&quot;常见错误排除方法&quot;&gt;常见错误排除方法&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;看log文件&lt;/li&gt;
+  &lt;li&gt;看配置文件有没有出错&lt;/li&gt;
+  &lt;li&gt;看是否配置选择太低&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Max</name><email>cd84413336@gmail.com</email></author><category term="tools" /><category term="tools" /><summary type="html">参考博客Linux上安装Hadoop集群(CentOS7+hadoop-2.8.0) 准备工作 下载Centos镜像，这里Centos7有DVD、Everything、Minimal等版本，如果是准备在实体机上搭建，可以选择Everything版本。Centos7 64位镜像 Minimal版本包括东西太少，这里我们选择DVD版本就好。(应需而异) Hadoop的安装包，因为教程里用的版本是2.8的，这里我下载的也是2.8.5的Hadoop安装包Hadoop2.8.5下载地址 Spark安装包，同上Spark-2.2.3-bin-hadoop2.7 Java安装包，注意需要JDK 8JDK1.8.0-201 Linux系统安装 我们在VMware上安装三个CentOs为例，VMware安装这里不细讲，这里有几个点需要注意。 SoftWare Selection里边不要选择Minimal install，这里我根据博客里选择的是Infrastructure Server,DNS Name Server,E-mail Server.建议新手选择带图形界面的版本。 Network &amp;amp; Host Name勾选 在安装时，可以设置Root密码和建立User。这里我为了方便只使用Root。 实现机器间互连 首先使用ifconfig查看三台机器的ip地址，我这里三台IP地址分别是 192.168.80.130 192.168.80.131 192.168.80.132 同时把三台机器的名称改为server1 server2 server3，使用hostname命令修改。然后在 三台机器上分别修改/etc/hosts文件，改为 192.168.80.130 server1 192.168.80.131 server2 192.168.80.132 server3 改好之后在每台机器上看是否能ping通其他机器。以server1为例 ping -c 3 server2 ping -c 3 server3 测试成功后在每台机器上执行 ssh-keygen -t rsa -P '' 执行之后在你用户文件夹下会多出一个.ssh文件夹，里面会有一个叫id_rsa.pub的文件，这是我们所需要的公钥。 我们把三台机器上的公钥复制到一起并保存为一个叫authorized_keys的文件，然后把这个文件发送到每个系统的.ssh文件夹内。 使用ssh登陆其他机器，以server1为例 ssh server2 ssh server3 注意：在ssh登陆后要使用exit命令退出，不然所做的所有操作都是作用在另外一台机器上 Spark所需前置软件的安装 安装JAVA Linux上安装JAVA 安装Hadoop 解压缩 假设Hadoop的文件夹在/opt处 新建目录 在/root目录下新建几个目录，复制粘贴执行下面的命令： mkdir /root/hadoop mkdir /root/hadoop/tmp mkdir /root/hadoop/var mkdir /root/hadoop/dfs mkdir /root/hadoop/dfs/name mkdir /root/hadoop/dfs/data 修改core-site.xml 修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/core-site.xml文件 在节点加入配置: &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;/root/hadoop/tmp&amp;lt;/value&amp;gt; &amp;lt;description&amp;gt;Abase for other temporary directories.&amp;lt;/description&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;fs.default.name&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;hdfs://hserver1:9000&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/configuration&amp;gt; 修改hadoop-env.sh 修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/hadoop-env.sh文件 将export JAVA_HOME=${JAVA_HOME}修改为： export JAVA_HOME=/opt/java/jdk1.8.0_121 修改hdfs-site.xml 修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/hdfs-site.xml文件在节点内加入配置: &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;dfs.name.dir&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;/root/hadoop/dfs/name&amp;lt;/value&amp;gt; &amp;lt;description&amp;gt;Path on the local filesystem where theNameNode stores the namespace and transactions logs persistently.&amp;lt;/description&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;dfs.data.dir&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;/root/hadoop/dfs/data&amp;lt;/value&amp;gt; &amp;lt;description&amp;gt;Comma separated list of paths on the localfilesystem of a DataNode where it should store its blocks.&amp;lt;/description&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;2&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;dfs.permissions&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;false&amp;lt;/value&amp;gt; &amp;lt;description&amp;gt;need not permissions&amp;lt;/description&amp;gt; &amp;lt;/property&amp;gt; 新建并修改mapred-site.xml 在该版本中，有一个名为mapred-site.xml.template的文件，复制该文件，然后改名为mapred-site.xml，命令是： cp /opt/hadoop/hadoop-2.8.0/etc/hadoop/mapred-site.xml.template /opt/hadoop/hadoop-2.8.0/etc/hadoop/mapred-site.xml 修改这个新建的mapred-site.xml文件，在节点内加入配置: &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;mapred.job.tracker&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;hserver1:49001&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;mapred.local.dir&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;/root/hadoop/var&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;mapreduce.framework.name&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;yarn&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 修改slaves文件 修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/slaves文件，将里面的localhost删除，添加如下内容： hserver2 hserver3 修改yarn-site.xml 3.2.3.6 修改yarn-site.xml文件 修改/opt/hadoop/hadoop-2.8.0/etc/hadoop/yarn-site.xml文件， 在节点内加入配置(注意了，内存根据机器配置越大越好，最少也得1.5G不然连example都跑不起来): &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.hostname&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;hserver1&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;description&amp;gt;The address of the applications manager interface in the RM.&amp;lt;/description&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8032&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;description&amp;gt;The address of the scheduler interface.&amp;lt;/description&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.scheduler.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8030&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;description&amp;gt;The http address of the RM web application.&amp;lt;/description&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8088&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;description&amp;gt;The https adddress of the RM web application.&amp;lt;/description&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.webapp.https.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8090&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.resource-tracker.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8031&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;description&amp;gt;The address of the RM admin interface.&amp;lt;/description&amp;gt; &amp;lt;name&amp;gt;yarn.resourcemanager.admin.address&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;${yarn.resourcemanager.hostname}:8033&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.nodemanager.aux-services&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;mapreduce_shuffle&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.scheduler.maximum-allocation-mb&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;2048&amp;lt;/value&amp;gt; &amp;lt;discription&amp;gt;每个节点可用内存,单位MB,默认8182MB&amp;lt;/discription&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.nodemanager.vmem-pmem-ratio&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;2.1&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.nodemanager.resource.memory-mb&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;2048&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;property&amp;gt; &amp;lt;name&amp;gt;yarn.nodemanager.vmem-check-enabled&amp;lt;/name&amp;gt; &amp;lt;value&amp;gt;false&amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; 安装Spark 前提要安装scala，这里不多赘述。 具体看博客 启动Spark 要启动Spark首先得启动Hadoop 启动Hadoop 先去hadoop目录下的bin目录，执行命令 ./hadoop namenode -format 然后去sbin目录下执行./start-all.sh 启动Spark 也在sbin目录下面执行./start-all.sh 若在server1下执行jps命令能看到Master，则成功。 在其他机器上能看到Worker，则成功。 常见错误排除方法 看log文件 看配置文件有没有出错 看是否配置选择太低</summary></entry><entry><title type="html">Linux的桌面美化</title><link href="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html" rel="alternate" type="text/html" title="Linux的桌面美化" /><published>2018-08-15T00:00:00+08:00</published><updated>2018-08-15T00:00:00+08:00</updated><id>http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/%E5%85%B6%E4%BB%96/2018/08/15/Linux%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96.html">&lt;h1 id=&quot;ubuntu的美化&quot;&gt;Ubuntu的美化&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.cnblogs.com/feipeng8848/p/8970556.html&quot;&gt;参考博客https://www.cnblogs.com/feipeng8848/p/8970556.html&lt;/a&gt;&lt;/p&gt;
 

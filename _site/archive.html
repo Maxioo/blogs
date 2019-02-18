@@ -270,9 +270,12 @@
   <ul class="menu">
     <li>
       <button type="button" class="button button--secondary button--pill tag-button js-article-tag " data-encode="">
-        Show All<div class="tag-button__count">2</div>
+        Show All<div class="tag-button__count">3</div>
       </button>
-    </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E5%85%B6%E4%BB%96">
+    </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="tools">
+          <span>tools</span><div class="tag-button__count">1</div>
+        </button>
+      </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E5%85%B6%E4%BB%96">
           <span>其他</span><div class="tag-button__count">1</div>
         </button>
       </li><li><button type="button" class="button button--pill tag-button tag-button-1 js-article-tag" data-encode="%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF">
@@ -344,7 +347,7 @@
     };
   })();
 
-  var data = initData('{"2018":[{"key":"1","title":"Linux%E7%9A%84%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96","tags":["%E5%85%B6%E4%BB%96"],"url":"%2F%25E5%2585%25B6%25E4%25BB%2596%2F2018%2F08%2F15%2FLinux%25E7%25B3%25BB%25E7%25BB%259F%25E7%25BE%258E%25E5%258C%2596.html","date":"Aug 15"},{"key":"2","title":"%E5%AE%9E%E7%8E%B0Windows%E5%BD%95%E5%B1%8F%E5%8A%9F%E8%83%BD%E7%9A%84%E6%83%B3%E6%B3%95","tags":["%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF"],"url":"%2F%25E9%259F%25B3%25E8%25A7%2586%25E9%25A2%2591%25E6%258A%2580%25E6%259C%25AF%2F2018%2F06%2F28%2FFirstProject.html","date":"Jun 28"}]}');
+  var data = initData('{"2019":[{"key":"1","title":"%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85Spark%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%90%AD%E5%BB%BA","tags":["tools"],"url":"%2Ftools%2F2019%2F02%2F16%2F%25E8%2599%259A%25E6%258B%259F%25E6%259C%25BA%25E5%2586%2585Spark%25E5%25B9%25B3%25E5%258F%25B0%25E7%259A%2584%25E6%2590%25AD%25E5%25BB%25BA.html","date":"Feb 16"}],"2018":[{"key":"2","title":"Linux%E7%9A%84%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96","tags":["%E5%85%B6%E4%BB%96"],"url":"%2F%25E5%2585%25B6%25E4%25BB%2596%2F2018%2F08%2F15%2FLinux%25E7%25B3%25BB%25E7%25BB%259F%25E7%25BE%258E%25E5%258C%2596.html","date":"Aug 15"},{"key":"3","title":"%E5%AE%9E%E7%8E%B0Windows%E5%BD%95%E5%B1%8F%E5%8A%9F%E8%83%BD%E7%9A%84%E6%83%B3%E6%B3%95","tags":["%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8A%80%E6%9C%AF"],"url":"%2F%25E9%259F%25B3%25E8%25A7%2586%25E9%25A2%2591%25E6%258A%2580%25E6%259C%25AF%2F2018%2F06%2F28%2FFirstProject.html","date":"Jun 28"}]}');
 
   var searchByTag = memorize(function(tag) {
     var i, j, cur, _tags, _tag, _data = {};
@@ -532,7 +535,14 @@
     <meta itemprop="name" content="Max"><link itemprop="url" href="http://localhost:4000/"><li title="Send me Email.">
       <a class="button button--circle mail-button" itemprop="sameAs" href="mailto:cd84413336@gmail.com" target="_blank">
         <i class="fas fa-envelope"></i>
-      </a></ul>
+      </a><li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/Maxioo" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
 </div>
 </aside>
     <footer class="site-info"><p>
