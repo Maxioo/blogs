@@ -1,14 +1,12 @@
 ---
 layout: article
-title: 虚拟机内Spark平台的搭建
+title: 利用Vscode在WSL上进行C++调试
 key: 100007
 category: blog
 tags: tools
 date: 2019-09-08 14:41:00 +08:00
 modify_date: 2019-09-08 14:41:00 +08:00
 ---
-
-# 利用Vscode在WSL上进行C++调试
 
 ## 1. 安装WSL
 这里网上有很多教程，[参考博客](https://www.cnblogs.com/skyshalo/p/7724072.html)
