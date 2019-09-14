@@ -1,6 +1,6 @@
 ---
 layout: article
-title: POJ: 2386 Lake Counting
+title: POJ 2386 Lake Counting
 key: 100009
 category: blog
 tags: POJ
